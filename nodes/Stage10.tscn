@@ -588,6 +588,7 @@ flip_v = true
 
 [node name="Fire" parent="." instance=ExtResource( 11 )]
 position = Vector2( 248, 88 )
+frame = 2
 
 [node name="Chicken" parent="." instance=ExtResource( 10 )]
 position = Vector2( 360, -470 )
