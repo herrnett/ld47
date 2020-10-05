@@ -5,6 +5,8 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+func _ready():
+	Musicplayer.play()
 
 func _input(event):
 	if event is InputEventKey:
