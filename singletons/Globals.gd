@@ -17,6 +17,7 @@ var animalscollected = 0
 
 func addplant(body, player, plant):
 	if body == player and plant.get_node("AnimatedSprite").visible:
+		player.get_node("Pickup").play()
 		plant.get_node("Gotplant/AnimationPlayer").play("gotplant")
 		plant.get_node("AnimatedSprite").visible = false
 		gotcurrentplant = true
@@ -24,6 +25,7 @@ func addplant(body, player, plant):
 
 func addanimal(body, player, animal):
 	if body == player and animal.get_node("AnimatedSprite").visible:
+		player.get_node("Powerup").play()
 		animal.get_node("Gotanimal/AnimationPlayer").play("gotanimal")
 		animal.get_node("AnimatedSprite").visible = false
 		gotcurrentanimal = true

@@ -588,12 +588,11 @@ flip_v = true
 
 [node name="Fire" parent="." instance=ExtResource( 11 )]
 position = Vector2( 248, 88 )
-frame = 0
 
 [node name="Chicken" parent="." instance=ExtResource( 10 )]
 position = Vector2( 360, -470 )
-[connection signal="body_entered" from="Killplane" to="Player" method="_on_Killplane_body_entered"]
 [connection signal="body_entered" from="Killplane" to="Ghost" method="_on_Killplane_body_entered"]
+[connection signal="body_entered" from="Killplane" to="Player" method="_on_Killplane_body_entered"]
 [connection signal="body_entered" from="Plant" to="Player" method="_on_Plant_body_entered"]
 [connection signal="body_entered" from="Spikes/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Spikes2/Area2D" to="Player" method="_on_Area2D_body_entered"]

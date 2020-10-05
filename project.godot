@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="The magic hat"
+config/name="The Magic Hat"
 run/main_scene="res://nodes/Main.tscn"
 boot_splash/image="res://gfx/misc/splash.png"
 boot_splash/fullsize=false

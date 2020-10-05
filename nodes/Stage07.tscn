@@ -475,6 +475,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" parent="." instance=ExtResource( 10 )]
+
 [node name="Ghost" parent="." instance=ExtResource( 3 )]
 position = Vector2( 24, 184 )
 
@@ -537,8 +539,6 @@ visible = false
 
 [node name="Frog" parent="." instance=ExtResource( 9 )]
 position = Vector2( 176, 74 )
-
-[node name="Background" parent="." instance=ExtResource( 10 )]
 [connection signal="body_entered" from="Killplane" to="Player" method="_on_Killplane_body_entered"]
 [connection signal="body_entered" from="Killplane" to="Ghost" method="_on_Killplane_body_entered"]
 [connection signal="body_entered" from="Nextlevel" to="." method="_on_Nextlevel_body_entered"]

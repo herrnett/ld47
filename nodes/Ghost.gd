@@ -49,6 +49,6 @@ func _on_Timer_timeout():
 
 # Redundant. Ghostindex is now set to zero in Player.gd/loop().
 # TODO: More elegant solution would be adding a reset-function here and calling it in Player.gd
-func _on_Killplane_body_entered(_body):
-	ghostindex = 0
+#func _on_Killplane_body_entered(_body):
+#	ghostindex = 0
 

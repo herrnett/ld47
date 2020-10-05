@@ -15,6 +15,8 @@ var ghostorientation
 
 
 func _ready():
+	Globals.tempghostdata = []
+	Globals.ghost = false
 	var _err
 	if get_parent().get_node_or_null("Plant") != null: 
 		_err = get_parent().get_node("Plant").connect("body_entered", self, "_on_Sign_body_exited")
@@ -63,6 +65,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if jumpcount < Globals.maxjumps:
 			velocity.y = -JUMPPOWER
+			$Jump.play()
 			if !$AnimatedSprite.flip_h: 
 				if Globals.gothat: $AnimatedSprite.animation = "hatjump"
 				else: $AnimatedSprite.animation = "jump"
@@ -121,7 +124,6 @@ func loop():
 	if Globals.gothat:
 		Globals.ghostdata = Globals.tempghostdata
 		Globals.ghost = true
-		get_parent().get_node("Ghost").ghostindex = 0
 	
 	# Reset flowers and animals if needed
 	if Globals.gotcurrentplant:
@@ -141,6 +143,7 @@ func loop():
 	# Start over
 	Globals.tempghostdata = []
 	self.position = startposition
+	get_parent().get_node("Ghost").ghostindex = 0
 
 
 func _on_Killplane_body_entered(body):
@@ -155,6 +158,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Hat_body_entered(body):
 	if body == self and get_parent().get_node("Hat/AnimatedSprite").visible:
+		$Powerup.play()
 		get_parent().get_node("Hat/RichTextLabel/AnimationPlayer").play("longfade")
 		get_parent().get_node("Hat/AnimatedSprite").visible = false
 		Globals.gothat = true
@@ -162,6 +166,7 @@ func _on_Hat_body_entered(body):
 
 func _on_Shoes_body_entered(body):
 	if body == self and get_parent().get_node("Shoes/AnimatedSprite").visible:
+		$Powerup.play()
 		get_parent().get_node("Shoes/RichTextLabel/AnimationPlayer").play("longfade")
 		get_parent().get_node("Shoes/AnimatedSprite").visible = false
 		Globals.gotshoes = true
@@ -187,6 +192,7 @@ func _on_Frog_body_entered(body):
 func _on_Cat_body_entered(body):
 	Globals.addanimal(body, self, get_parent().get_node("Cat"))
 
+
 func _on_Chicken_body_entered(body):
 	Globals.addanimal(body, self, get_parent().get_node("Chicken"))
-	Scenechanger.change_scene("res://nodes/Outro.tscn", true)
+	if body == self: Scenechanger.change_scene("res://nodes/Outro.tscn", true)
