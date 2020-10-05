@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://nodes/Ghost.gd" type="Script" id=2]
+[ext_resource path="res://gfx/player.tres" type="SpriteFrames" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 7 )
+
+[node name="Ghost" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0.682353 )
+frames = ExtResource( 3 )
+animation = "shoecarrystandleft"
+playing = true
+
+[node name="Ontop" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 3 )
+animation = "hatcrouch"
+offset = Vector2( 0, -13 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

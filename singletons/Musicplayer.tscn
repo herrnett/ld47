@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+volume_db = -80.0
+
+[node name="Tween" type="Tween" parent="."]

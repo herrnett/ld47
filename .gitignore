@@ -13,3 +13,6 @@ debug.log
 # Mono-specific ignores
 .mono/
 data_*/
+
+# My own ignores
+workspace/

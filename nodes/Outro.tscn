@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/pstp_verysmall.tres" type="DynamicFont" id=1]
+[ext_resource path="res://gfx/backgroundlong.png" type="Texture" id=2]
+[ext_resource path="res://nodes/Outro.gd" type="Script" id=3]
+
+[node name="Outro" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 192, 448 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 48.0
+margin_right = 232.0
+margin_bottom = 208.0
+color = Color( 0.223529, 0.192157, 0.294118, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 56.0
+margin_right = 232.0
+margin_bottom = 192.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Ari had already fallen asleep when a series of unusual noises pierced the night. When she left her house the next day, her three animal friends had disappeared. Without hesitation she went looking for them.[/center]"
+text = "Ari had already fallen asleep when a series of unusual noises pierced the night. When she left her house the next day, her three animal friends had disappeared. Without hesitation she went looking for them."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_top = 198.0
+margin_right = 400.0
+margin_bottom = 230.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
