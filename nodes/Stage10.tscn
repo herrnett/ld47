@@ -32,10 +32,10 @@ position = Vector2( 208, -224 )
 texture = ExtResource( 8 )
 
 [node name="Ghost" parent="." instance=ExtResource( 3 )]
-position = Vector2( 40, -392 )
+position = Vector2( 24, 200 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40, -392 )
+position = Vector2( 24, 200 )
 z_index = 1
 z_as_relative = false
 
@@ -139,7 +139,7 @@ flip_v = true
 
 [node name="Fire" parent="." instance=ExtResource( 11 )]
 position = Vector2( 248, 88 )
-frame = 3
+frame = 2
 
 [node name="Chicken" parent="." instance=ExtResource( 10 )]
 position = Vector2( 360, -470 )
